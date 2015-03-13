@@ -1,0 +1,27 @@
+﻿<h1>Search a city</h1>
+
+<div class="row">
+
+    <div class="col-lg-9">
+        <input type="text" ng-model="query" class="form-control" />
+    </div>
+    <div class="col-lg-3">
+        <button class="btn btn-default btn-lg" ng-click="searchCity(query)">Search</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-4">
+        <accordion  data-ng-repeat ="city in cities">
+            <accordion-group is-open="true" heading ="{{city.name}}">
+                <p>Country: {{city.sys.country}}</p>
+                <p ng-repeat="meteo in city.weather">
+                    {{meteo.main}} : {{meteo.description}}
+
+                    <img ng-src="http://openweathermap.org/img/w/{{meteo.icon}}.png">
+                </p><br />
+                <a ng-href="#/city/{{city.id}}">Show more</a>
+            </accordion-group>
+        </accordion>
+    </div>
+</div>

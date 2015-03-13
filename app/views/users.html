@@ -1,0 +1,11 @@
+﻿USers
+
+<div ui-grid="gridOptions" class="myGrid"></div>
+
+<form ng-submit="addUser(user)">
+    First Name : <input type="text" ng-model="user.firstname" />
+    Last Name : Name : <input type="text" ng-model="user.lastname" />
+    Company : <input type="text" ng-model="user.company" />
+    Company : <input type="checkbox" ng-model="user.employed" />
+    <input type="submit" value="Add"/>
+</form>

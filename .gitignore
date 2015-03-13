@@ -1,0 +1,6 @@
+bin
+bower_components
+obj
+*.config
+*.cs
+*.csproj*

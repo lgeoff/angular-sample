@@ -1,0 +1,14 @@
+﻿<h1> Data visualization</h1>
+<a href="#/chart"><< Back</a>
+<form class="form-inline">
+    <p>Only show <input type="number" class="form-control input-small" ng-model="number"> sample of data</p>
+</form>
+
+    <h2>Humidity</h2>
+    <div ui-chart="shrinkedData(number,city,'humidity')" chart-options="chartOptions"></div>
+    <h2>Degree</h2>
+    <div ui-chart="shrinkedData(number,city,'deg')" chart-options="chartOptions"></div>
+    <h2>Cloud</h2>
+    <div ui-chart="shrinkedData(number,city,'clouds')" chart-options="chartOptions"></div>
+    <h2>Pressure</h2>
+    <div ui-chart="shrinkedData(number,city,'pressure')" chart-options="chartOptions"></div>
