@@ -6,7 +6,7 @@
             templateUrl: 'app/views/home.html',
             controller: 'HomeController'
         }).
-        when('/chart', {
+        when('/weather', {
             templateUrl: 'app/views/chart.html',
             controller: 'ChartController'
         }).

@@ -1,11 +1,28 @@
-﻿USers
+﻿<img src="resources/custom/ajax-loader.gif" ng-if="loading" /><br><br>
+<label>Search &nbsp; </label><input type="text" ng-model="search" />
+<table class="table table-condensed">
+ <thead>
+ 	<tr>
+ 		<th ng-click="changeOrder();setSortField(key);" style="text-align:center;" ng-repeat= "(key, value) in myData[0]">{{key | firstcapitalletter}}</th><th></th>
+ 	</tr>
+ </thead>
+ <tbody>
+ 	<tr ng-repeat="user in myData  | orderBy:sortField:order | filter:search">
+ 		<td ng-repeat= "(key, value) in user">{{value}}</td> <td><a  href="javascript:void(0)" ng-click="removeUser(user.userRef);">remove</a></td>
+ 	</tr>
 
-<div ui-grid="gridOptions" class="myGrid"></div>
+ </tbody>
+</table>
 
-<form ng-submit="addUser(user)">
-    First Name : <input type="text" ng-model="user.firstname" />
+
+<form ng-submit="addUser(user)" name="userform">
+    First Name : <input type="text" ng-model="user.firstname"  data-ng-minlength='3' name='firstname'/>
     Last Name : Name : <input type="text" ng-model="user.lastname" />
     Company : <input type="text" ng-model="user.company" />
     Company : <input type="checkbox" ng-model="user.employed" />
     <input type="submit" value="Add"/>
+
+    <span class="errorMessage" ng-show="userform.firstname.$touched && userform.firstname.$invalid">
+    	should be more than 3.
+    </span>
 </form>

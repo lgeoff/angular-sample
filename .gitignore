@@ -1,6 +1,7 @@
-bin
-bower_components
-obj
-*.config
-*.cs
-*.csproj*
+logs/*
+!.gitkeep
+node_modules/
+bower_components/
+tmp
+.DS_Store
+.idea
